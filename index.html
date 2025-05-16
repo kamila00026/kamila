@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS Kota Bandung</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+<link rel="stylesheet" href="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.css" />
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"
+charset="utf-8"></script>
+
+<script src="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet Fullscreen Plugin CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.css" />
+
+<!-- Leaflet Locate Control CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!--Header Section-->
+    <header id="navbar"> 
+        <div class="container"> 
+            <div class="logo"> 
+                <img src="asset/logo.png" alt="Logo" width="100"> 
+                <h1>WebGIS Kota Bandung</h1> 
+            </div> 
+            <nav> 
+                <ul> 
+                    <li><a href="#hero-section">Home</a></li> 
+                    <li><a href="#map-section">Map</a></li> 
+                    <li><a href="#data-section">Data</a></li> 
+                    <li><a href="#author-section">Author</a></li> 
+                    <li><a href="#footer">Contact</a></li> 
+                </ul> 
+            </nav> 
+        </div> 
+    </header> 
+
+    <!--Hero Section-->
+    <div id="hero-section" class="hero-section"> 
+        <div class="hero-content"> 
+            <h1>WebGIS Basis Data Spasial Kota Bandung</h1> 
+            <p>Halaman untuk Melakukan Eksplorasi Basis Data Spasial di Kota Bandung</p> 
+        </div> 
+    </div> 
+    <!--Map Section-->
+    <div id="map-section"> 
+        <h2>Jelajahi WebGIS Basis Data Spasial Kota Bandung</h2> 
+        <div id="map"> 
+            <!-- akan muncul peta disini --> 
+        </div> 
+    </div> 
+    <!--Data Section-->
+    <div id="data-section"> 
+        <h2>Data Tersedia</h2> 
+        <div class="container"> 
+            <div class="column"> 
+                <div class="data-item"> 
+                    <img src="asset/Kota Bandung.jpg" alt="Image 1"> 
+                    <div class="description"> 
+                        <h3>LETAK GEOGRAFIS</h3> 
+                        <p>Kota Bandung terletak di sekitar 6°54'53" Lintang Selatan dan 107°36'35" Bujur Timur, berada di bagian tengah Provinsi Jawa Barat, Indonesia. Kota ini dikelilingi oleh pegunungan, membentuk sebuah cekungan besar yang dikenal sebagai Cekungan Bandung, sehingga menghasilkan udara yang relatif sejuk. Secara administratif, Bandung berbatasan dengan Kabupaten Bandung Barat di utara, serta Kabupaten Bandung di timur, selatan, dan barat.</p> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="column"> 
+                <div class="data-item"> 
+                    <img src="asset/Penduduk.jpg" alt="Image 1"> 
+                                        <div class="description"> 
+                                            <h3>KEPENDUDUKAN</h3> 
+                                            <p>Pada tahun 2024, jumlah penduduk Kota Bandung tercatat sebanyak 2.579.837 jiwa berdasarkan data Disdukcapil, dengan komposisi hampir seimbang antara 1.259.236 laki-laki dan 1.247.367 perempuan menurut data BPS tahun 2023. Kota Bandung mengalami pertumbuhan penduduk yang stabil, dari 2.500.965 jiwa pada tahun 2020 menjadi 2.579.837 jiwa di tahun 2024, meningkat sekitar 79.000 jiwa dalam lima tahun. Penduduk Kota Bandung tersebar di 30 kecamatan, dengan salah satu kecamatan berpenduduk terbesar adalah Babakan Ciparay yang memiliki sekitar 145.616 jiwa pada tahun 2023. Distribusi usia penduduk juga cukup merata, mencerminkan keseimbangan antara kelompok usia muda dan dewasa.</p> 
+                                        </div> 
+                                    </div> 
+                                </div> 
+                                <div class="column"> 
+                                    <div class="data-item"> 
+                                        <img src="asset/Fasilitas Umum.jpg" alt="Image 1"> 
+                                        <div class="description"> 
+                                            <h3>FASILITAS UMUM</h3> 
+                                            <p> Fasilitas pendidikan berupa berbagai sekolah, perguruan tinggi ternama seperti ITB, UNPAD, dan UPI, serta fasilitas kesehatan yang mencakup rumah sakit besar seperti RS Hasan Sadikin dan RS Santosa. Untuk transportasi, Bandung dilengkapi dengan Stasiun Bandung, Bandara Husein Sastranegara, Terminal Leuwipanjang dan Cicaheum, serta layanan bus seperti Trans Metro Bandung. Ruang terbuka hijau juga cukup banyak, di antaranya Taman Balai Kota, Taman Lansia, dan Alun-Alun Bandung. 
+                                        </div> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                            <div class="container"> 
+                                <div class="column"> 
+                                    <div class="data-item"> 
+                                        <img src="asset/Geowisata.jpeg" alt="Image 1"> 
+                                        <div class="description"> 
+                                            <h3>GEO WISATA</h3> 
+                                            <p> Tebing Keraton yang menawarkan pemandangan Cekungan Bandung dari ketinggian, Taman Hutan Raya Ir. H. Djuanda dengan hutan konservasi, goa-goa bersejarah, dan air terjun, serta Curug Dago sebagai bagian dari sistem sungai wilayah geologi Bandung Utara.</p> 
+                                        </div> 
+                                    </div> 
+                                </div> 
+                                <div class="column"> 
+                                    <div class="data-item"> 
+                                        <img src="asset/Bencana Alam.jpg" alt="Image 1"> 
+                                        <div class="description"> 
+                                            <h3>KEJADIAN BENCANA ALAM</h3> 
+                                            <p>Beberapa kejadian bencana alam di Kota Bandung antara lain gempa Sesar Lembang, banjir tahunan di Dayeuhkolot dan Baleendah, longsor di kawasan Bandung Utara, serta letusan kecil Gunung Tangkuban Parahu tahun 2019.</p> 
+                                        </div> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </div> 
+
+                        <div id="author-section"> 
+                            <div class="author-content"> 
+                                <h2>Tentang Pembuat</h2> 
+                                <img src="asset/profile.jpg" alt="Profile Picture" class="profile-picture"> 
+                                <div class="author-name"> 
+                                    <h3>Tazkia Najwa Kamila</h3> 
+                                </div> 
+                                <p>Seorang mahasiswa yang saat ini tengah menempuh jenjang pendidikan S1 di jurusan Sains Informasi Geografi. Saat ini memiliki minat pada SIG, penginderaan jauh, 
+                    WebGIS, dan SIG untuk mitigasi bencana dan termotivasi untuk terus belajar dan berkembang sebagai 
+                    analis SIG.</p> 
+                            </div> 
+                        </div>    <div id="footer"> 
+                            <div class="footer-content"> 
+                                <h3>Hubungi Saya</h3> 
+                                <p>Email: hallokia299@gmail.com</p> 
+                                <p>Phone: +6285720763020</p> 
+                            </div> 
+                        </div> 
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet Fullscreen Plugin CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.css" />
+
+<!-- Leaflet Locate Control CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+<link rel="stylesheet" href="css/style.css">
+<script src="script.js"></script>
+                         
+</body>
+</html>
